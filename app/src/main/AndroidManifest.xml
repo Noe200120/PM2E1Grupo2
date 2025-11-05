@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.pm2e1grupo2">
 
-    <!-- 🌐 Permisos necesarios -->
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -22,12 +22,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
-        <!-- 🗺️ Clave de Google Maps -->
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="" />
 
-        <!-- 🧭 Activities -->
+
         <activity android:name=".MapaActivity" />
         <activity android:name=".ListaActivity" />
         <activity android:name=".RegistroActivity" />
