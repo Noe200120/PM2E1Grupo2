@@ -19,6 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PM2E1Grupo2"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
         <!-- 🗺️ Clave de Google Maps -->

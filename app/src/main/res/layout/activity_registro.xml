@@ -1,73 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E3F2FD"
     android:padding="16dp">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="80dp">
 
+        <!-- Título -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registro de Contacto"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#37474F"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Campo: Nombre -->
         <EditText
             android:id="@+id/txtNombre"
-            android:hint="Nombre"
+            android:hint="Nombre completo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/caja_campo"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp" />
 
+        <!-- Campo: Teléfono -->
         <EditText
             android:id="@+id/txtTelefono"
             android:hint="Teléfono"
             android:inputType="phone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/caja_campo"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp" />
 
+        <!-- Campo: Correo -->
         <EditText
             android:id="@+id/txtCorreo"
-            android:hint="Correo"
+            android:hint="Correo electrónico"
             android:inputType="textEmailAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/caja_campo"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp" />
 
+        <!-- Campo: Latitud -->
         <EditText
             android:id="@+id/txtLat"
             android:hint="Latitud"
             android:inputType="numberDecimal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/caja_campo"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp" />
 
+        <!-- Campo: Longitud -->
         <EditText
             android:id="@+id/txtLng"
             android:hint="Longitud"
             android:inputType="numberDecimal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/caja_campo"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp" />
 
+        <!-- Botón ubicación -->
         <Button
             android:id="@+id/btnUbicacion"
-            android:text="Obtener mi ubicación"
+            android:text="📍 Obtener mi ubicación"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:backgroundTint="#0288D1"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:elevation="3dp"
+            android:layout_marginBottom="20dp" />
 
+        <!-- Firma -->
         <TextView
             android:text="Firma digital:"
             android:textStyle="bold"
-            android:paddingTop="10dp"
+            android:textColor="#37474F"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
 
-        <!-- Vista de firma personalizada -->
         <com.example.pm2e1grupo2.LienzoFirma
             android:id="@+id/firmaView"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="#FFFFFF" />
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:layout_marginBottom="20dp" />
 
+        <!-- Botón Guardar -->
         <Button
             android:id="@+id/btnGuardar"
-            android:text="Guardar Contacto"
+            android:text="💾 Guardar Contacto"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:backgroundTint="#1976D2"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:elevation="3dp"
+            android:layout_marginBottom="10dp" />
 
     </LinearLayout>
 </ScrollView>

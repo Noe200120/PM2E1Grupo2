@@ -36,31 +36,41 @@ public class RegistroActivity extends AppCompatActivity {
         btnGuardar = findViewById(R.id.btnGuardar);
         btnUbicacion = findViewById(R.id.btnUbicacion);
 
-        // 🔹 Al presionar "Obtener mi ubicación", abre el mapa
+
         btnUbicacion.setOnClickListener(v -> {
             Intent intent = new Intent(RegistroActivity.this, MapaActivity.class);
             startActivity(intent);
         });
 
-        // 🔹 Al presionar "Guardar contacto", envía los datos y la firma al servidor
+
         btnGuardar.setOnClickListener(v -> guardarContacto());
     }
 
     private void guardarContacto() {
-        String url ="http://10.0.2.2/api_pm2e1grupo2/insertar.php";
+        String url = "http://10.0.2.2/api_pm2e1grupo2/insertar.php";
 
-        VolleyMultipartRequest req = new VolleyMultipartRequest(Request.Method.POST, url,
-                r -> Toast.makeText(this, "Guardado correctamente", Toast.LENGTH_SHORT).show(),
-                e -> Toast.makeText(this, "Error movil", Toast.LENGTH_SHORT).show()) {
+        VolleyMultipartRequest volleyMultipartRequest = new VolleyMultipartRequest(
+                Request.Method.POST, url,
+                response -> {
+                    if (response.trim().equalsIgnoreCase("OK")) {
+                        Toast.makeText(this, "Contacto guardado correctamente", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(this, "Error al guardar: " + response, Toast.LENGTH_LONG).show();
+                    }
+                },
+
+                error -> {
+                    Toast.makeText(this, "Error móvil: " + error.getMessage(), Toast.LENGTH_LONG).show();
+                }) {
 
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> map = new HashMap<>();
-                map.put("nombre", txtNombre.getText().toString());
-                map.put("telefono", txtTelefono.getText().toString());
-                map.put("correo", txtCorreo.getText().toString());
-                map.put("lat", txtLat.getText().toString());
-                map.put("lng", txtLng.getText().toString());
+                map.put("nombre", txtNombre.getText().toString().trim());
+                map.put("telefono", txtTelefono.getText().toString().trim());
+                map.put("correo", txtCorreo.getText().toString().trim());
+                map.put("lat", txtLat.getText().toString().trim());
+                map.put("lng", txtLng.getText().toString().trim());
                 return map;
             }
 
@@ -73,6 +83,7 @@ public class RegistroActivity extends AppCompatActivity {
                 return params;
             }
         };
-        Volley.newRequestQueue(this).add(req);
+
+        Volley.newRequestQueue(this).add(volleyMultipartRequest);
     }
 }
