@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
+import android.text.method.DigitsKeyListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -33,6 +36,24 @@ public class RegistroActivity extends AppCompatActivity {
         btnGuardar = findViewById(R.id.btnGuardar);
         btnUbicacion = findViewById(R.id.btnUbicacion);
 
+
+        InputFilter soloLetras = new InputFilter() {
+            public CharSequence filter(CharSequence src, int start, int end, Spanned dest, int dstart, int dend) {
+                for (int i = start; i < end; i++) {
+                    char c = src.charAt(i);
+                    if (!Character.isLetter(c) && c != ' ') {
+                        Toast.makeText(RegistroActivity.this, "Solo se permiten letras en el nombre", Toast.LENGTH_SHORT).show();
+                        return "";
+                    }
+                }
+                return null;
+            }
+        };
+        txtNombre.setFilters(new InputFilter[]{soloLetras, new InputFilter.LengthFilter(50)});
+
+
+        txtTelefono.setKeyListener(DigitsKeyListener.getInstance("0123456789"));
+
         btnUbicacion.setOnClickListener(v -> {
             Intent intent = new Intent(RegistroActivity.this, MapaActivity.class);
             startActivity(intent);
@@ -51,7 +72,6 @@ public class RegistroActivity extends AppCompatActivity {
             Toast.makeText(this, "Por favor completa todos los campos antes de guardar", Toast.LENGTH_LONG).show();
             return;
         }
-
 
         String url = "http://10.0.2.2/api_pm2e1grupo2/insertar.php";
 
@@ -90,7 +110,6 @@ public class RegistroActivity extends AppCompatActivity {
 
         Volley.newRequestQueue(this).add(volleyMultipartRequest);
     }
-
 
     private void limpiarCampos() {
         txtNombre.setText("");
