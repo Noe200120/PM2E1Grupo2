@@ -1,0 +1,57 @@
+POST: []
+FILES: []
+
+POST: []
+FILES: []
+
+POST: []
+FILES: []
+
+POST: []
+FILES: []
+
+POST: []
+FILES: []
+
+POST: []
+FILES: []
+
+POST: []
+FILES: []
+
+POST: []
+FILES: []
+
+POST: []
+FILES: []
+
+POST: []
+FILES: []
+
+POST: []
+FILES: []
+
+POST: []
+FILES: []
+
+POST: []
+FILES: []
+
+POST: {"lng":"45.2","correo":"dfsdc","telefono":"453453","nombre":"sdfsdf","lat":"25.21"}
+FILES: {"firma":{"name":"firma.png","full_path":"firma.png","type":"image\/png","tmp_name":"C:\\xampp\\tmp\\php1DCA.tmp","error":0,"size":16295}}
+
+POST: {"lng":"48.25","correo":"andres@gmail.com","telefono":"98558874","nombre":"andres","lat":"45.52"}
+FILES: {"firma":{"name":"firma.png","full_path":"firma.png","type":"image\/png","tmp_name":"C:\\xampp\\tmp\\php27DE.tmp","error":0,"size":27902}}
+
+POST: {"lng":"","correo":"","telefono":"","nombre":"","lat":""}
+FILES: {"firma":{"name":"firma.png","full_path":"firma.png","type":"image\/png","tmp_name":"C:\\xampp\\tmp\\php58BD.tmp","error":0,"size":4053}}
+
+POST: {"lng":"45.21","correo":"noe@gami.com","telefono":"9855669784","nombre":"Noe Rivera","lat":"52.21"}
+FILES: {"firma":{"name":"firma.png","full_path":"firma.png","type":"image\/png","tmp_name":"C:\\xampp\\tmp\\phpEA06.tmp","error":0,"size":21622}}
+
+POST: {"lng":"78.25","correo":"rivera@gmail.com","telefono":"544562255","nombre":"andres","lat":"45.25"}
+FILES: {"firma":{"name":"firma.png","full_path":"firma.png","type":"image\/png","tmp_name":"C:\\xampp\\tmp\\phpBD49.tmp","error":0,"size":20348}}
+
+POST: {"lng":"52.21","correo":"161161","telefono":"545545","nombre":"dfdgdsfg","lat":"20.25"}
+FILES: {"firma":{"name":"firma.png","full_path":"firma.png","type":"image\/png","tmp_name":"C:\\xampp\\tmp\\phpFA6F.tmp","error":0,"size":16437}}
+
