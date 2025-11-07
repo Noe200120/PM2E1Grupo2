@@ -54,10 +54,12 @@ public class RegistroActivity extends AppCompatActivity {
 
         txtTelefono.setKeyListener(DigitsKeyListener.getInstance("0123456789"));
 
+
         btnUbicacion.setOnClickListener(v -> {
             Intent intent = new Intent(RegistroActivity.this, MapaActivity.class);
             startActivity(intent);
         });
+
 
         btnGuardar.setOnClickListener(v -> guardarContacto());
     }
@@ -78,11 +80,14 @@ public class RegistroActivity extends AppCompatActivity {
         VolleyMultipartRequest volleyMultipartRequest = new VolleyMultipartRequest(
                 Request.Method.POST, url,
                 response -> {
-                    if (response.trim().equalsIgnoreCase("OK")) {
+                    String respuesta = response.trim();
+                    if (respuesta.equalsIgnoreCase("OK")) {
                         Toast.makeText(this, "Contacto guardado correctamente", Toast.LENGTH_SHORT).show();
                         limpiarCampos();
+                    } else if (respuesta.equalsIgnoreCase("EXISTE")) {
+                        Toast.makeText(this, "El correo ya está registrado", Toast.LENGTH_LONG).show();
                     } else {
-                        Toast.makeText(this, "Error al guardar: " + response, Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "Error al guardar: " + respuesta, Toast.LENGTH_LONG).show();
                     }
                 },
                 error -> Toast.makeText(this, "Error móvil: " + error.getMessage(), Toast.LENGTH_LONG).show()
